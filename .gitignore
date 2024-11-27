@@ -16,3 +16,4 @@ log.txt
 *.userprefs
 
 artifacts/
+OAuth2.Console.Tests/

@@ -73,6 +73,8 @@ namespace OAuth2.Client
             Configuration = configuration;
         }
 
+        protected virtual string ResponseType => "code";
+
         /// <summary>
         /// Returns URI of service which should be called in order to start authentication process.
         /// This URI should be used for rendering login link.
@@ -90,7 +92,7 @@ namespace OAuth2.Client
             {
                 request.AddObject(new
                 {
-                    response_type = "code",
+                    response_type = ResponseType,
                     client_id = Configuration.ClientId,
                     redirect_uri = Configuration.RedirectUri,
                     state
@@ -100,7 +102,7 @@ namespace OAuth2.Client
             {
                 request.AddObject(new
                 {
-                    response_type = "code",
+                    response_type = ResponseType,
                     client_id = Configuration.ClientId,
                     redirect_uri = Configuration.RedirectUri,
                     scope = Configuration.Scope,
